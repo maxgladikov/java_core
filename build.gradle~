@@ -1,0 +1,70 @@
+plugins {
+        id 'java'
+        id 'eclipse'
+}
+
+
+
+ext { 
+                springBootVersion = '3.1.5'
+                springCloudVersion = "2022.0.4"
+                mapstructVersion = "1.5.5.Final"
+                lombokVersion = "1.18.28"
+                jacocoVersion = "0.8.7"
+                jUnitVersion='5.7.1'
+                profiles = 'dev'
+        }
+
+
+
+java. toolchain.languageVersion = JavaLanguageVersion.of(17)
+    
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            setSrcDirs(listOf("src/java"))
+        }
+        resources {
+            setSrcDirs(listOf("src/resources"))
+        }
+    }
+}
+
+
+
+dependencies{
+	
+	testImplementation ("org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"){
+				exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+			}
+	compileOnly("org.projectlombok:lombok:${lombokVersion}")
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation("org.mockito:mockito-core:5.7.0")
+	}
+
+configurations {
+	compileOnly.extendsFrom annotationProcessor
+	testCompileOnly.extendsFrom annotationProcessor
+	testAnnotationProcessor.extendsFrom annotationProcessor
+	}
+
+
+sourceSets {
+    main {
+        java {
+            setSrcDirs(listOf("src"))
+        }
+    }
+
+    test {
+        java {
+            setSrcDirs(listOf("test"))
+        }
+    }
+}
+
+version = "1.2.1"
