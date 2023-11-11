@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="15 seconds">
+
+    <appender name="STDOUT"
+        class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                 [%green(%date{HH:mm:ss.SSS})] %highlight(%-5level) [%thread] %class{5}.%blue(%M): %message%n%ex{2}%n
+            </pattern>
+        </encoder>
+    </appender>
+
+   
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+<!-- "%black", "%red", "%green","%yellow","%blue", "%magenta","%cyan", "%white", "%gray", "%boldRed","%boldGreen", "%boldYellow", "%boldBlue", "%boldMagenta""%boldCyan", "%boldWhite" and "%highlight"  -->
+</configuration>

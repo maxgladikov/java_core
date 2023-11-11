@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="online.gladikov.java_core.jvm.FileClassLoaderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-11T15:33:32" hostname="laptop" time="0.018">
+  <properties/>
+  <testcase name="givenPath_whenConvertToFullyQualifiedName_thenVerifyCorrect()" classname="online.gladikov.java_core.jvm.FileClassLoaderTest" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
